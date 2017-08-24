@@ -13,8 +13,8 @@ class Experience(models.Model):
         string="Job Name", 
         required=True
     )
-    service_user = fields.Char(
-        string="Service User", 
+    partner_id = fields.Many2one('res.partner',
+        string="Customer", 
         required=True
     )
     scope_service = fields.Text(
