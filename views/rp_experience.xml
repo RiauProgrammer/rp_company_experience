@@ -16,7 +16,7 @@
             <field name="name">Company Experience</field>
             <field name="res_model">company.experience</field>
             <field name="view_type">form</field>
-            <field name="view_mode">tree,kanban,form,calendar,pivot,graph</field>
+            <field name="view_mode">tree,kanban,form,pivot,graph</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">Create the first experience
                 </p>
@@ -72,8 +72,8 @@
         <!-- End Form Experience -->
 
         <!-- List View Experience -->
-        <record id="experience_list" model="ir.ui.view">
-            <field name="name">experience_list</field>
+        <record id="view_experience" model="ir.ui.view">
+            <field name="name">company.experience.tree</field>
             <field name="model">company.experience</field>
             
             <field name="arch" type="xml">
@@ -90,6 +90,61 @@
             </field>
         </record>
         <!-- End List View Experience -->
+
+        <!-- Kanban View Experience -->
+        <record id="view_experience_kanban" model="ir.ui.view">
+            <field name="name">company.experience.kanban</field>
+            <field name="model">company.experience</field>
+
+            <field name="arch" type="xml">
+                <kanban default_group_by="status">
+                    <field name="color"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div
+                                t-attf-class="oe_kanban_color_{{kanban_getcolor(record.color.raw_value)}}
+                                                  oe_kanban_global_click_edit oe_semantic_html_override
+                                                  oe_kanban_card {{record.group_fancy==1 ? 'oe_kanban_card_fancy' : ''}}">
+                                <div class="oe_dropdown_kanban">
+                                    <!-- dropdown menu -->
+                                    <div class="oe_dropdown_toggle">
+                                        <i class="fa fa-bars fa-lg"/>
+                                        <ul class="oe_dropdown_menu">
+                                            <li>
+                                                <a type="delete">Delete</a>
+                                            </li>
+                                            <li>
+                                                <ul class="oe_kanban_colorpicker"
+                                                    data-field="color"/>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="oe_clear"></div>
+                                </div>
+                                <div t-attf-class="oe_kanban_content">
+                                    <div>
+                                        <field name="num_contract"/>
+                                    </div>
+                                    <div>
+                                        <field name="job_name"/>
+                                    </div>
+                                    <div>
+                                        <field name="partner_id"/>
+                                    </div>
+                                    <div>
+                                        <field name="start_date"/>
+                                    </div>
+                                    <div>
+                                        <field name="end_date"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <!-- End Kanban View Experience -->
 
     </data>
 </odoo>
