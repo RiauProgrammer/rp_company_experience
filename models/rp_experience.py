@@ -17,7 +17,7 @@ class Experience(models.Model):
         string="Customer", 
         required=True
     )
-    scope_service = fields.Text(
+    description = fields.Text(
         string="Scop of Service", 
         required=True
     )
