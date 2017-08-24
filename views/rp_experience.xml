@@ -57,9 +57,11 @@
                             </group>
                         </group>
 
-                        <group>
-                            <field name="scope_service" />
-                        </group>
+                        <notebook>
+                            <page string="Description" >
+                                <field name="description" />
+                            </page>
+                        </notebook>
 
                     </sheet>
                 </form>
