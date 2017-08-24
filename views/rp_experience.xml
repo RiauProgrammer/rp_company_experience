@@ -2,7 +2,7 @@
 <odoo>
     <data>
         
-        <record model="ir.actions.act_window" id="action_experience_list">
+        <record id="action_experience_list" model="ir.actions.act_window">
             <field name="name">CourExperienceses</field>
             <field name="res_model">company.experience</field>
             <field name="view_type">form</field>
@@ -14,11 +14,59 @@
         </record>
 
         <!-- top level menu: no parent -->
-        <menuitem id="company_experience_menu_0" name="Company Experience"/>
-        <menuitem id="company_experience_menu_1" name="Company Experience"
+        <menuitem id="company_experience_menu_0" 
+            name="Company Experience"/>
+        <menuitem id="company_experience_menu_1" 
+            name="Company Experience"
                   parent="company_experience_menu_0"/>
-        <menuitem id="company_experience_menu_1_1" name="Experience" parent="company_experience_menu_1"
+        <menuitem id="company_experience_menu_1_1" 
+            name="Experience" parent="company_experience_menu_1"
                   action="action_experience_list"/>
 
+        <!-- Form Experience -->
+        <record id="experience_from" model="ir.ui.view">
+            <field name="name">experience_from</field>
+            <field name="model">company.experience</field>
+
+            <field name="arch" type="xml">
+
+                <form string="Company Experience">
+                    <div class="oe_title">
+                        <h1>
+                            <field name="job_name" 
+                            readonly="1"
+                             />
+                        </h1>
+                    </div>
+                    
+                    <group>
+                        <group>
+                            <field name="num_contract" />
+                            <field name="service_user" />
+                            <field name="start_date" />
+                            <field name="price" />
+                        </group>
+
+                        <group>
+                            <field name="service_user" />
+                            <field name="periode" />
+                            <field name="end_date" />
+                            <field name="company_id" 
+                            options="{'no_create': True}"
+                            />
+                        </group>
+                    </group>
+
+                    <group>
+                        <field name="scope_service" />
+                    </group>
+
+                </form>
+
+            </field>
+            
+        </record>
+        <!-- End Form Experience -->
+        
     </data>
 </odoo>
