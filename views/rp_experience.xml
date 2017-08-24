@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <data>
+    <data>      
         
-        <record id="action_experience_list" model="ir.actions.act_window">
-            <field name="name">Company Experience</field>
-            <field name="res_model">company.experience</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="help" type="html">
-                <p class="oe_view_nocontent_create">Create the first experience
-                </p>
-            </field>
-        </record>
-
         <!-- top level menu: no parent -->
         <menuitem id="company_experience_menu_0" 
             name="Company Experience"/>
@@ -22,6 +11,17 @@
         <menuitem id="company_experience_menu_1_1" 
             name="Experience" parent="company_experience_menu_1"
                   action="action_experience_list"/>
+        
+        <record id="action_experience_list" model="ir.actions.act_window">
+            <field name="name">Company Experience</field>
+            <field name="res_model">company.experience</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form,calendar,pivot,graph</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first experience
+                </p>
+            </field>
+        </record>
 
         <!-- Form Experience -->
         <record id="experience_from" model="ir.ui.view">
@@ -70,6 +70,26 @@
             
         </record>
         <!-- End Form Experience -->
+
+        <!-- List View Experience -->
+        <record id="experience_list" model="ir.ui.view">
+            <field name="name">experience_list</field>
+            <field name="model">company.experience</field>
+            
+            <field name="arch" type="xml">
+                <tree string="Experince">
+                    <field name="num_contract" />
+                    <field name="job_name" />
+                    <field name="partner_id" />
+                    <field name="periode" />
+                    <field name="start_date" />
+                    <field name="end_date" />
+                    <field name="price" />
+                    <field name="status" />
+                </tree>
+            </field>
+        </record>
+        <!-- End List View Experience -->
 
     </data>
 </odoo>
