@@ -46,3 +46,5 @@ class Experience(models.Model):
         string="Company", 
         required=True
     )
+
+    color = fields.Integer()
