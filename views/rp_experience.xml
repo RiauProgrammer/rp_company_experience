@@ -8,9 +8,6 @@
         <menuitem id="company_experience_menu_1" 
             name="Company Experience"
                   parent="company_experience_menu_0"/>
-        <menuitem id="company_experience_menu_1_1" 
-            name="Experience" parent="company_experience_menu_1"
-                  action="action_experience_list"/>
         
         <record id="action_experience_list" model="ir.actions.act_window">
             <field name="name">Company Experience</field>
@@ -22,6 +19,10 @@
                 </p>
             </field>
         </record>
+
+        <menuitem id="company_experience_menu_1_1" 
+            name="Experience" parent="company_experience_menu_1"
+                  action="action_experience_list"/>
 
         <!-- Form Experience -->
         <record id="experience_from" model="ir.ui.view">
