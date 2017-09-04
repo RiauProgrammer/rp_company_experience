@@ -4,7 +4,8 @@
         
         <!-- top level menu: no parent -->
         <menuitem id="company_experience_menu_0" 
-            name="Company Experience"/>
+            name="Company Experience"
+            web_icon="rp_company_experience,static/description/icon.png"/>
         <menuitem id="company_experience_menu_1" 
             name="Company Experience"
                   parent="company_experience_menu_0"/>
