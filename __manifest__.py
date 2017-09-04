@@ -9,7 +9,7 @@
     'email': 'mhdsyarif.ms@gmail.com',
     'website': 'https://www.mhdsyarif.com',
     'license': 'AGPL-3',
-    'depends': ['contacts'],
+    'depends': ['contacts','base','mail'],
     'data': [
         'views/rp_experience.xml',
         'security/rp_experience.xml',
