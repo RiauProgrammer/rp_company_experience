@@ -12,6 +12,7 @@
     'depends': ['contacts'],
     'data': [
         'views/rp_experience.xml',
+        'security/rp_experience.xml',
     ],
     'images': ['static/description/syarif.png'],
     'installable': True,
