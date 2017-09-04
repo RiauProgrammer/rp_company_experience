@@ -58,8 +58,8 @@
                         </group>
 
                         <notebook>
-                            <page string="Description" >
-                                <field name="description" />
+                            <page string="Scope" >
+                                <field name="scope" />
                             </page>
                         </notebook>
 
