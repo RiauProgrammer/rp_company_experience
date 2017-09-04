@@ -6,7 +6,7 @@ Odoo 10 - Company Experience
    <img class="oe_picture oe_screenshot" src="static/description/ss_00.png">
 </div>
 <br/>
-# List View
+# ListView
 <div>
    <img class="oe_picture oe_screenshot" src="static/description/ss_01.png">
 </div>
