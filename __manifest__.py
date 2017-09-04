@@ -13,6 +13,7 @@
     'data': [
         'views/rp_experience.xml',
         'security/rp_experience.xml',
+        'security/ir.model.access.csv',
     ],
     'images': ['static/description/syarif.png'],
     'installable': True,
