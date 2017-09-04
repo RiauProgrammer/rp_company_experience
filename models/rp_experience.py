@@ -5,6 +5,7 @@ from odoo import models, fields
 class Experience(models.Model):
     _name = 'company.experience'
     _description = "Data Experience"
+    _inherit = ['mail.thread']
 
     num_contract = fields.Char(
         string="Contract Number"
